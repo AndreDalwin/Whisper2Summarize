@@ -1,17 +1,17 @@
 # Whisper2Summarize
 
-Whisper2Summarize is an application that uses Whisper for audio processing and GPT for summarization. It generates summaries of audio transcripts quickly and accurately, making it ideal for a variety of use cases such as note-taking, research, and content creation.
+Whisper2Summarize is an application that uses [Whisper](https://github.com/openai/whisper) for audio processing and [GPT](https://platform.openai.com/docs/api-reference) for summarization. It generates summaries of audio transcripts accurately, making it ideal for a variety of use cases such as note-taking, research, and content creation.
 
 ## Setup
 
 I used Python 3.10.11 to build this application, but OpenAI's Whisper and GPT is expected to be compatible with Python 3.8-3.10. The code depends on a few Python packages, notably OpenAI's Whisper and GPT, their dependencies, a torch verison that supports CUDA, and rust.
 
-> [!NOTE] If you have an NVIDIA GPU, follow this step. Otherwise skip it.
-> You want to install a different version of torch that supports CUDA.
->
-> ```
-> pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
-> ```
+**If you have an NVIDIA GPU, follow this step. Otherwise skip it.**
+You want to install a different version of torch that supports CUDA.
+
+```
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+```
 
 You will need to install OpenAI's Whisper and GPT.
 

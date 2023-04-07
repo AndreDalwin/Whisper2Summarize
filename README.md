@@ -6,13 +6,14 @@ Whisper2Summarize is an application that uses Whisper for audio processing and G
 
 I used Python 3.10.11 to build this application, but OpenAI's Whisper and GPT is expected to be compatible with Python 3.8-3.10. The code depends on a few Python packages, notably OpenAI's Whisper and GPT, their dependencies, a torch verison that supports CUDA, and rust.
 
-`**(If you do not have an NVIDIA GPU, skip this step.)**` You want to install a different version of torch that supports CUDA.
+> [!NOTE] If you have an NVIDIA GPU, follow this step. Otherwise skip it.
+> You want to install a different version of torch that supports CUDA.
+>
+> ```
+> pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+> ```
 
-```
-pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
-```
-
-You also need to install OpenAI's Whisper and GPT.
+You will need to install OpenAI's Whisper and GPT.
 
 ```
 pip install -U openai-whisper openai
@@ -56,7 +57,7 @@ Ensure you create a `.env` file in the directory containing your OpenAI API Key,
 
 ### Command Line Usage
 
-The followinc command will transcribe audio files, using Whisper's `medium` model:
+The following command will transcribe audio files, using Whisper's `medium` model:
 
 ```shell
 python whisper2summarize.py audio.mp3 --model medium
@@ -71,3 +72,13 @@ tiny, small, base, medium, large-v2
 ```
 
 To see the requirements to run these different models, check out [OpenAI's Whisper Github](https://github.com/openai/whisper#available-models-and-languages) to learn more.
+
+### Results
+
+Running the program will output 2 files. **Transcript.txt** which is the raw transcript of the audio recording, and **Summary.txt** which is the summarized short form of the transcript.
+
+## License
+
+Whisper's model weights are released under the MIT License. See [LICENSE](https://github.com/openai/whisper/blob/main/LICENSE) for further details.
+
+Feel free to fork this to experiment this yourself.

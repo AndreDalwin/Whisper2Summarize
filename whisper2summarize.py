@@ -45,7 +45,7 @@ result = model.transcribe(audio, verbose=None, fp16=False)
 transcribed = result["text"]
 with open("Transcript.txt", "w",encoding='utf-8') as text_file:
     text_file.write(transcribed)
-    print("Saved Transcript to Output.txt")
+    print("Saved Transcript to Transcript.txt")
 
 print("Processing Transcript with GPT...")
 n=1300
@@ -62,9 +62,9 @@ for i in range(0, len(snippet), 1):
         temperature = 0.6,
     )
     previous = gpt_response['choices'][0]['message']['content']
-    summary.append(gpt_response['choices'][0]['message']['content'])
+    summary += gpt_response['choices'][0]['message']['content']
 
 with open("Summary.txt", "w",encoding='utf-8') as text_file:
-    text_file.write(transcribed)
+    text_file.write(summary)
     print("Summarizing Completed.")
     print("Saved Summary to Summary.txt")

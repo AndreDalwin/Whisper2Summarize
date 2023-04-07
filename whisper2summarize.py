@@ -3,17 +3,27 @@ import torch
 import whisper 
 import openai
 import tqdm
-import sys
+import sys, argparse
 from dotenv import load_dotenv
 
+parser = argparse.ArgumentParser(description='Whisper2Summarize - a tool for summarizing audio files')
+parser.add_argument('audio', type=str, help='the audio file to summarize')
+parser.add_argument('--model', type=str, default='base', help='the summarization model to use (default: base)')
+
+# parse the arguments
+args = parser.parse_args()
+
+audio = args.audio
+model_type = args.model
 load_dotenv()
-#SETUP
+
+
 openai.api_key = os.getenv('OPENAI_KEY')
 devices = torch.device("cuda:0" if torch.cuda.is_available() else "cpu") 
 
 
-model = whisper.load_model("tiny", device = devices)
-audio = "audio.mp3"
+model = whisper.load_model(args.model, device = devices)
+
 
 
 class _CustomProgressBar(tqdm.tqdm):

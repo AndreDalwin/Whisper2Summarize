@@ -2,6 +2,12 @@
 
 Whisper2Summarize is an application that uses [Whisper](https://github.com/openai/whisper) for audio processing and [GPT](https://platform.openai.com/docs/api-reference) for summarization. It generates summaries of audio transcripts accurately, making it ideal for a variety of use cases such as note-taking, research, and content creation.
 
+## Quick Start with Google Colab
+
+To get started with Google Colab, you may check out the [Whisper2Summarize Notebook](https://colab.research.google.com/drive/1WpyL8v04mcJ7H4caw0z1xMtZIp3B_JYV?usp=sharing) that contains a modified version of the code that works in Google Colab.
+
+Just add in your API Key, audio file to the session storage, and select the Whisper Model to use. (I don't suggest using medium or large as it will be incredibly slow.)
+
 ## Quick Start with GUI
 
 To immediately get started with this program, you should clone this repository and install the requirements.

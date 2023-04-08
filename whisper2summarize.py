@@ -6,6 +6,7 @@ import tqdm
 import sys, argparse
 from dotenv import load_dotenv
 
+
 def transcribe(audio,model_type):
     class _CustomProgressBar(tqdm.tqdm):
         def __init__(self, *args, **kwargs):
@@ -38,7 +39,7 @@ def gpt_process(transcript):
     n=1300
     split = transcript.split()
     snippet= [' '.join(split[i:i+n]) for i in range(0,len(split),n)]
-
+    ## For managing token limit
     summary=""
     previous=""
     for i in range(0, len(snippet), 1):
@@ -66,6 +67,5 @@ parser.add_argument('--model', type=str, default='base', help='the summarization
 args = parser.parse_args()
 audio = args.audio
 model_type = args.model
-
 text = transcribe(audio,model_type)
 gpt_process(text)

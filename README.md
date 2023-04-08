@@ -2,6 +2,17 @@
 
 Whisper2Summarize is an application that uses [Whisper](https://github.com/openai/whisper) for audio processing and [GPT](https://platform.openai.com/docs/api-reference) for summarization. It generates summaries of audio transcripts accurately, making it ideal for a variety of use cases such as note-taking, research, and content creation.
 
+## Quick Start with GUI
+
+To immediately get started with this program, you should clone this repository and install the requirements.
+
+```shell
+git clone https://github.com/AndreDalwin/Whisper2Summarize.git
+cd Whisper2Summarize
+pip install -r requirements.txt
+python w2sgui.py
+```
+
 ## Setup
 
 I used Python 3.10.11 to build this application, but OpenAI's Whisper and GPT is expected to be compatible with Python 3.8-3.10. The code depends on a few Python packages, notably OpenAI's Whisper and GPT, their dependencies, a torch verison that supports CUDA, and rust.
@@ -73,6 +84,14 @@ tiny, small, base, medium, large-v2
 
 To see the requirements to run these different models, check out [OpenAI's Whisper Github](https://github.com/openai/whisper#available-models-and-languages) to learn more.
 
+### GUI Usage
+
+You may start the GUI which allows you to select the audio file, model select, and paste in your OpenAI API Key.
+
+```shell
+python w2sgui.py
+```
+
 ### Results
 
 Running the program will output 2 files. **Transcript.txt** which is the raw transcript of the audio recording, and **Summary.txt** which is the summarized short form of the transcript.
@@ -81,4 +100,4 @@ Running the program will output 2 files. **Transcript.txt** which is the raw tra
 
 Whisper's model weights are released under the MIT License. See [LICENSE](https://github.com/openai/whisper/blob/main/LICENSE) for further details.
 
-Feel free to fork this to experiment this yourself.
+Feel free to fork this to experiment this yourself. I actually made this for my girlfriend since her class recordings are really long.

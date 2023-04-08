@@ -4,7 +4,7 @@ Whisper2Summarize is an application that uses [Whisper](https://github.com/opena
 
 ## Quick Start with Google Colab
 
-To get started with Google Colab, you may check out the [Whisper2Summarize Notebook](https://colab.research.google.com/drive/1WpyL8v04mcJ7H4caw0z1xMtZIp3B_JYV?usp=sharing) that contains a modified version of the code that works in Google Colab.
+To get started with Google Colab, you may check out the [Whisper2Summarize Notebook](https://colab.research.google.com/github/AndreDalwin/Whisper2Summarize/blob/main/Whisper2Summarize_Colab_Edition.ipynb) that contains a modified version of the code that works in Google Colab.
 
 Just add in your API Key, audio file to the session storage, and select the Whisper Model to use. (I don't suggest using medium or large as it will be incredibly slow.)
 

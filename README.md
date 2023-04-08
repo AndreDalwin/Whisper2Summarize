@@ -1,4 +1,5 @@
 # Whisper2Summarize
+[\[Google Colab\]](https://colab.research.google.com/github/AndreDalwin/Whisper2Summarize/blob/main/Whisper2Summarize_Colab_Edition.ipynb) 
 ![Cover Photo](/misc/cover.png)
 Whisper2Summarize is an application that uses [Whisper](https://github.com/openai/whisper) for audio processing and [GPT](https://platform.openai.com/docs/api-reference) for summarization. It generates summaries of audio transcripts accurately, making it ideal for a variety of use cases such as note-taking, research, and content creation.
 
@@ -19,7 +20,7 @@ pip install -r requirements.txt
 python w2sgui.py
 ```
 
-## Setup
+## Building from Source
 
 I used Python 3.10.11 to build this application, but OpenAI's Whisper and GPT is expected to be compatible with Python 3.8-3.10. The code depends on a few Python packages, notably OpenAI's Whisper and GPT, their dependencies, a torch verison that supports CUDA, and rust.
 
@@ -68,7 +69,7 @@ git clone https://github.com/AndreDalwin/Whisper2Summarize.git
 cd Whisper2Summarize
 ```
 
-## Getting Started
+## Using the Program
 
 Ensure you create a `.env` file in the directory containing your OpenAI API Key, you will need it to run this program.
 
@@ -107,3 +108,8 @@ Running the program will output 2 files. **Transcript.txt** which is the raw tra
 Whisper's model weights are released under the MIT License. See [LICENSE](https://github.com/openai/whisper/blob/main/LICENSE) for further details.
 
 Feel free to fork this to experiment this yourself. I actually made this for my girlfriend since her class recordings are really long.
+
+## Future Plans
+- Implement a "Translate" feature to translate transcripts to a different language
+- Implement an option to change OpenAI model (gpt-3.5-turbo, text-davinci-003, gpt-4)
+- Print out possible errors in the GUI terminal when something bad happens

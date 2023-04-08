@@ -16,8 +16,6 @@ class App(ctk.CTk):
         self.title("Whisper 2 Summarize")
         self.resizable(False,False)
 
-        
-        # create 2x2 grid system
         self.grid_rowconfigure(4, weight=1)
         self.grid_columnconfigure((0, 1), weight=1)
 
@@ -39,7 +37,7 @@ class App(ctk.CTk):
         self.summarybutton = ctk.CTkButton(self, command=self.summary_button, text="Summarize with GPT",)
         self.summarybutton.grid(row=3, column=1, padx=20, pady=20, sticky="ew")
 
-        self.console = ctk.CTkTextbox(self,state="disabled")
+        self.console = ctk.CTkTextbox(self)
         self.console.grid(row=4, column=0, columnspan=2, padx=20, pady=(20, 0), sticky="nsew")
 
     def write(self,*message, end = "\n", sep = " "):

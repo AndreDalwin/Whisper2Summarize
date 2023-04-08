@@ -1,5 +1,5 @@
 # Whisper2Summarize
-
+![Cover Photo](/misc/cover.png)
 Whisper2Summarize is an application that uses [Whisper](https://github.com/openai/whisper) for audio processing and [GPT](https://platform.openai.com/docs/api-reference) for summarization. It generates summaries of audio transcripts accurately, making it ideal for a variety of use cases such as note-taking, research, and content creation.
 
 ## Quick Start with Google Colab

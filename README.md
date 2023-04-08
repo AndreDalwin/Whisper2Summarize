@@ -22,7 +22,12 @@ python w2sgui.py
 
 ## Building from Source
 
-I used Python 3.10.11 to build this application, but OpenAI's Whisper and GPT is expected to be compatible with Python 3.8-3.10. The code depends on a few Python packages, notably OpenAI's Whisper and GPT, their dependencies, a torch verison that supports CUDA, and rust.
+
+I used Python 3.10.11 to build this application, but OpenAI's Whisper and GPT is expected to be compatible with Python 3.8-3.10. The code depends on a few Python packages, notably OpenAI's Whisper and GPT, their dependencies, a torch verison that supports CUDA, and rust. You have the option to install all the requirements by cloning the repository then typing:
+
+```
+pip install -r requirements.txt
+```
 
 **If you have an NVIDIA GPU, follow this step. Otherwise skip it.**
 You want to install a different version of torch that supports CUDA.

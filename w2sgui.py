@@ -12,30 +12,30 @@ class App(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        self.geometry("800x600")
+        self.geometry("900x700")
         self.title("Whisper 2 Summarize")
         self.resizable(False,False)
 
         self.grid_rowconfigure(4, weight=1)
         self.grid_columnconfigure((0, 1), weight=1)
 
-        self.titlelabel = ctk.CTkLabel(self, text="What would you want to transcribe?", font=ctk.CTkFont(size=30,weight="bold"))
+        self.titlelabel = ctk.CTkLabel(self, text="What would you want to transcribe?", font=ctk.CTkFont(family="Verdana", size=30,weight="bold"))
         self.titlelabel.grid(row=0, column=0, columnspan=2, padx=20, pady=20, sticky="ew")
 
-        self.audiobutton = ctk.CTkButton(self, command=self.select_audio, text="Select Audio File")
-        self.audiobutton.grid(row=1, columnspan=2, padx=20, pady=10, sticky="ew")
+        self.audiobutton = ctk.CTkButton(self, command=self.select_audio, height=50, text="Select Audio File", font=ctk.CTkFont(family="Verdana", size=16,weight="bold"))
+        self.audiobutton.grid(row=1, columnspan=2, padx=20, pady=10, sticky="nsew")
 
         self.modelselect = ctk.CTkComboBox(self, values=["tiny", "base","small","medium","large"], variable= ctk.StringVar(value="Select the Whisper Model"))
-        self.modelselect.grid(row=2, column=0, padx=20, pady=20, sticky="ew")
+        self.modelselect.grid(row=2, column=0, padx=20, pady=10, sticky="ew")
 
         self.apitext = ctk.CTkEntry(self,placeholder_text="Enter your OpenAI API Key here.")
-        self.apitext.grid(row=2, column=1, padx=20, pady=20, sticky="ew")
+        self.apitext.grid(row=2, column=1, padx=20, pady=10, sticky="ew")
 
-        self.transcribebutton = ctk.CTkButton(self, command=self.transcribe_button, text="Transcribe with Whisper",)
-        self.transcribebutton.grid(row=3, column=0, padx=20, pady=20, sticky="ew")
+        self.transcribebutton = ctk.CTkButton(self, command=self.transcribe_button, height=50, text="Transcribe with Whisper", font=ctk.CTkFont(family="Verdana", size=16,weight="bold"))
+        self.transcribebutton.grid(row=3, column=0, padx=20, pady=10, sticky="nsew")
 
-        self.summarybutton = ctk.CTkButton(self, command=self.summary_button, text="Summarize with GPT",)
-        self.summarybutton.grid(row=3, column=1, padx=20, pady=20, sticky="ew")
+        self.summarybutton = ctk.CTkButton(self, command=self.summary_button, height=50, text="Summarize with GPT", font=ctk.CTkFont(family="Verdana", size=16,weight="bold"))
+        self.summarybutton.grid(row=3, column=1, padx=20, pady=10, sticky="nsew")
 
         self.console = ctk.CTkTextbox(self)
         self.console.grid(row=4, column=0, columnspan=2, padx=20, pady=(20, 0), sticky="nsew")
